@@ -16,6 +16,7 @@ pipeline {
     }
     stage('terraform') {
       steps {
+        sh 'yum install wget -y'
         sh './terraformw apply -auto-approve -no-color'
       }
     }
